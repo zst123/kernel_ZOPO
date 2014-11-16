@@ -12,14 +12,15 @@ export TARGET_KERNEL_PRODUCT=`cat DEVICE_TREE`
 #Echo actual vars
 echo "We are actually building for $TARGET_KERNEL_PRODUCT with $CROSS_COMPILE"
 
+#model supported: 990a, 990b, 980a, 980b, C3
+MODEL=$1
+echo "Model specified is $MODEL"
+
 #Create vars for OUT, SCRIPTS and RAMDISK directories
-OUT_DIRECTORY=../out/$TARGET_KERNEL_PRODUCT
+OUT_DIRECTORY=../out/$TARGET_KERNEL_PRODUCT/$MODEL
 RAMDISK_DIRECTORY=../ramdisk/$TARGET_KERNEL_PRODUCT
 SCRIPTS_DIRECTORY=../scripts/$TARGET_KERNEL_PRODUCT
 CERTIFICATES_DIRECTORY=../.certificates
-
-#model supported: 990a, 990b, 980a, 980b, C3
-MODEL=990a
 
 #Workaround for + appended on kernelrelease
 export LOCALVERSION=

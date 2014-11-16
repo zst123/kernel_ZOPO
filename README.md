@@ -11,8 +11,6 @@ first of all thanks to dr-shadow (https://github.com/Dr-Shadow/android_kernel_mt
 
 this kernel is compatible with ZOPO model: 980, 990, C3
 
-to choose which model to compile you have to edit the file build.sh and change the variable MODEL (valid values ​​are 990a, 990b, 980a, 980b, C3)
-
 for the 980 and 990 there are variants that differ in the accelerometer sensor, try first with the A version...if the rotation of the screen (in landscape) is upside down recompile with B version
 
 you also need to edit the path of toolchain
@@ -23,7 +21,16 @@ selinux enabled, binder.c patched for KK, sweep2wake and doubletap2wake, various
 
 
 for compile:
-./build.sh
+./build.sh 
+
+to choose which model to compile you must specify as a parameter for build.sh (valid values ​​are 990a, 990b, 980a, 980b, C3)
+```
+./build.sh 990a
+./build.sh 990b
+./build.sh 980a
+./build.sh 980b
+./build.sh C3
+```
 
 for clean:
 ./clean.sh
